@@ -27,7 +27,8 @@ describe('Funcionalidade: Produtos', () => {
   it('Deve selecionar o produto "Aero Daily Fitness Tee" com contains e verificar a descrição', () => {
     
     cy.get('.products > .row')
-        .contains('Aero Daily Fitness Tee', { timeout: 10000 }).should('be.visible').click();
+        .contains('Aero Daily Fitness Tee')
+        .click();
 
     cy.get('#tab-title-description > a').should('contain', 'Descrição');
       
