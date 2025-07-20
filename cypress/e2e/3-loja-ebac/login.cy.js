@@ -1,10 +1,12 @@
 //<reference type="cypress"/>
 
+const   perfil = require("../../fixtures/perfil.json")
+
 describe('Funcionalidade', () => {
 
     beforeEach(() => {
         
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta')
 
     });
 
@@ -53,5 +55,54 @@ describe('Funcionalidade', () => {
         cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para o e-mail caio.teste@teste.com.br está incorreta. Perdeu a senha?')
 
     });
+
+    it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando massa de dados', () => {
+        cy.get('#username').type(perfil.usuario) 
+        cy.get('#password').type(perfil.senha)
+        
+        cy.get('.woocommerce-form > .button').click()
+
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')    
+    });
+
+    it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando fixture', () => {
+        cy.fixture('perfil').then(  dados => {
+            cy.get('#username').type(dados.usuario) 
+            cy.get('#password').type(dados.senha)
+        
+            cy.get('.woocommerce-form > .button').click()
+
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')        
+        })
+        //podemos colocar fora de fixture tambem, legal saber
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')
+            
+    });
+
+    it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando comandos customizados', () => {
+        
+        cy.login('caio.teste@teste.com.br', 'bc~xVDmvy6^~$:w')
+
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')        
+
+    });
     
+    it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando comandos customizados e fixture', () => {
+        cy.fixture('perfil').then(  dados => {
+            cy.login(dados.usuario, dados.senha)
+
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')        
+        })
+        //podemos colocar fora de fixture tambem, legal saber
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')
+            
+    });
 });
