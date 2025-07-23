@@ -6,7 +6,7 @@ describe('Funcionalidade: Detalhes da Conta', () => {
         cy.visit('minha-conta/edit-account')
         //cy.login('caio.teste@teste.com.br', 'bc~xVDmvy6^~$:w')
         cy.fixture('perfil').then(login => {
-            cy.login(login.usuario, login.senha)
+            cy.login(login[1].usuario, login[1].senha)
         })
     });
 

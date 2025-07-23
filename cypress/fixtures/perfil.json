@@ -1,4 +1,14 @@
-{
-    "usuario": "caio.teste@teste.com.br",
-    "senha": "bc~xVDmvy6^~$:w"
-}
+[
+    {
+        "usuario": "caio.teste@teste.com.br",
+        "senha": "bc~xVDmvy6^~$:w"
+    },
+    {
+        "usuario": "caio.teste2@teste.com.br",
+        "senha": "bc~xVDmvy6^~$:w"    
+    },
+    {
+        "usuario": "caio.atividade@atividade.com.br",
+        "senha": "bc~xVDmvy6^~$:w"    
+    }
+]

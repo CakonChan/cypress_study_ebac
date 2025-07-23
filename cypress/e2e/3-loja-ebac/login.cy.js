@@ -24,7 +24,7 @@ describe('Funcionalidade', () => {
 
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')
 
     });
 
@@ -57,29 +57,29 @@ describe('Funcionalidade', () => {
     });
 
     it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando massa de dados', () => {
-        cy.get('#username').type(perfil.usuario) 
-        cy.get('#password').type(perfil.senha)
+        cy.get('#username').type(perfil[0].usuario) 
+        cy.get('#password').type(perfil[0].senha)
         
         cy.get('.woocommerce-form > .button').click()
 
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')    
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')    
     });
 
     it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando fixture', () => {
         cy.fixture('perfil').then(  dados => {
-            cy.get('#username').type(dados.usuario) 
-            cy.get('#password').type(dados.senha)
+            cy.get('#username').type(dados[0].usuario) 
+            cy.get('#password').type(dados[0].senha)
         
             cy.get('.woocommerce-form > .button').click()
 
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')        
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')        
         })
         //podemos colocar fora de fixture tambem, legal saber
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')
             
     });
 
@@ -89,20 +89,20 @@ describe('Funcionalidade', () => {
 
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')        
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')        
 
     });
     
     it('Deve fazer login com sucesso e validar se texto do cliente é mesmo texto esperado - usando comandos customizados e fixture', () => {
         cy.fixture('perfil').then(  dados => {
-            cy.login(dados.usuario, dados.senha)
+            cy.login(dados[0].usuario, dados[0].senha)
 
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')        
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')        
         })
         //podemos colocar fora de fixture tambem, legal saber
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.teste (não é caio.teste? Sair)')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, caio.testecakon.qacakon (não é caio.testecakon.qacakon? Sair)')
             
     });
 });

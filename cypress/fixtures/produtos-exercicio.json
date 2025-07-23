@@ -1,0 +1,26 @@
+[
+    {
+        "nomeProduto": "Cassius Sparring Tank",
+        "tamanho": "S",
+        "cor": "Blue",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Sinbad Fitness Tank",
+        "tamanho": "L",
+        "cor": "Blue",
+        "quantidade": 2
+    },
+    {
+        "nomeProduto": "Grayson Crewneck Sweatshirt",
+        "tamanho": "XL",
+        "cor": "Red",
+        "quantidade": 1
+    },
+    {
+        "nomeProduto": "Geo Insulated Jogging Pant",
+        "tamanho": "36",
+        "cor": "Green",
+        "quantidade": 7
+    }
+]
