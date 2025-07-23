@@ -1,6 +1,6 @@
 const   perfil_carrinho = require("../../fixtures/perfil-carrinho.json")
 
-class funcionalidade {
+class exercicio_e2e_funcionliada {
 
     adicionarProdutoAoCarrinho(nomeProduto, tamanho, cor, quantidade) {
         cy.get('[name="s"]').eq(1).type(nomeProduto)
@@ -159,4 +159,4 @@ class funcionalidade {
     }
 }
 
-export default new funcionalidade()
+export default new exercicio_e2e_funcionliada()
