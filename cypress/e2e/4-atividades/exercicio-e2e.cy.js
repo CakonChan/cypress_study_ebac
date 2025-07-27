@@ -25,42 +25,42 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         //exercicioFuncionliadaPage.montarPedidoCom4Produtos()
         
         exercicioFuncionliadaPage.montarPedidoCom4ProdutosComFixtureEDadosJson()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.clicarBotaoCarrinho()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.removerProdutoEscolhido(4)
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.validarResumoFinalDaCompra()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.preencherDadosNaCompraDeCarrinho()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.selecionarTransferencia()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.selecionarCheque()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.selecionarPagamentoNaEntregue()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.aceitoTermosQueNaoLi()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.finalizarPedido()
-        cy.wait(8200)
+        
       
   });
 
   it('Tentativa de Concluir Compra Sem Dados Necessarios e Nao Aceitar Termos', () => {
 
         exercicioFuncionliadaPage.montarPedidoCom4ProdutosComFixtureEDadosJsonComEach()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.clicarBotaoCarrinho()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.removerProdutoEscolhido(4)
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.validarResumoFinalDaCompra()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.limparDadosPreenchidosNaCompraDeCarrinho()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.finalizarPedido()
-        cy.wait(500)
+        
         exercicioFuncionliadaPage.validarSeTentaConcluirPedidoSemDadosNecessariosENaoAceitarTermos()
   });
 
