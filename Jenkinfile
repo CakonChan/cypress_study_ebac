@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Executar testes WEB') {
       steps {
-        bat 'NO_COLOR=1 npm start'
+        bat 'set NO_COLOR=1 && npm test'
       }
     }
   }
