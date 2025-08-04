@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('Instalar deps') {
       steps {
-        sh 'npm install'
+        bat 'npm install'
       }
     }
     stage('Executar testes WEB') {
       steps {
-        sh 'NO_COLOR=1 npm start'
+        bat 'NO_COLOR=1 npm start'
       }
     }
   }
