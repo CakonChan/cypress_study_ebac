@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  environment { NO_COLOR = '1' }
   stages {
     stage('Instalar deps') {
       steps {
@@ -8,7 +9,7 @@ pipeline {
     }
     stage('Executar testes WEB') {
       steps {
-        sh 'NO_COLOR=1 npm test'
+        sh 'npm test'
       }
     }
   }
