@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --browser chrome",
+    "test": "npx cypress run --spec \"cypress/e2e/4-atividades/exercicio-e2e-feedback.cy.js\"",
     "cy:dash": "npx cypress run --record --key 61458d98-a227-43d2-bea9-dea14521bb87"
   },
   "keywords": [],

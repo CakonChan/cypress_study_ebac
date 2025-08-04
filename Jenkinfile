@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Executar testes WEB') {
       steps {
-        sh 'NO_COLOR=1 npx cypress run --spec "cypress/e2e/4-atividades/exercicio-e2e-feedback.cy.js"'
+        sh 'NO_COLOR=1 npm start'
       }
     }
   }
